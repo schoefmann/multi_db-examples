@@ -1,0 +1,6 @@
+.DS_Store
+.svn
+coverage
+nbproject
+log/*
+tmp/*

@@ -1,0 +1,16 @@
+# You might want to add dbhost_master and dbhost_slave to your /etc/hosts 
+production:
+  adapter: mysql
+  database: multi-db_sample22-prd
+  pool: 5
+  username: root
+  password:
+  host: dbhost_master
+
+production_slave_database:
+  adapter: mysql
+  database: multi-db_sample22-prd
+  pool: 5
+  username: root
+  password:
+  host: dbhost_slave

@@ -1,0 +1,32 @@
+<% title h(@post.title) %>
+
+<h4>from <%=h @post.author %> at <%=h @post.created_at %></h4>
+<p>
+  <strong>Body:</strong>
+  <%=h @post.body %>
+</p>
+<p>
+  <strong>Author:</strong>
+  <%=h @post.author %>
+</p>
+<small>
+  <%= link_to "edit", edit_post_path(@post) %> |
+  <%= link_to "destroy", @post, :confirm => 'Are you sure?', :method => :delete %>
+</small>
+
+<p>
+  <%= link_to "Back to posts", posts_path %>
+</p>
+
+
+<h3>Comments</h3>
+
+<p>
+  <%= link_to 'Add a comment', new_post_comment_path(@post) %>
+</p>
+
+<% for comment in @post.comments %>
+  <h4><%=h comment.author %> said on <%=h comment.created_at %></h4>
+  <p><%=h comment.body %></p>
+  <small><%= link_to 'delete', [@post, comment], :confirm => 'Sure?', :method => :delete %></small>
+<% end %>
