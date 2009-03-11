@@ -1,12 +1,12 @@
-<% title "Posts" %>
+<% title "Muppet Blog" %>
 
 <% for post in @posts %>
   <h2><%= link_to h(post.title), post %></h2>
   <small><%=h post.author %>, <%=h post.created_at %></small>
-  <p>
-    <%= truncate(h(post.body), :length => 80, :omission => link_to(' (read more)', @post)) %>
-  </p>
+  <%= simple_format(truncate(h(post.body), :length => 500, :omission => link_to(' (read more)', post))) %>
   <small>viewed <%=h post.views %> times(s)</small>
 <% end %>
 
 <p><%= link_to "Post something", new_post_path %></p>
+
+<div class="apple_pagination"><%= will_paginate @posts %></div>

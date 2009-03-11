@@ -80,3 +80,21 @@ body {
   font-size: 12px;
   list-style: disc;
 }
+
+.apple_pagination {
+  background: #F1F1F1;
+  border: 1px solid #E5E5E5;
+  text-align: center;
+  padding: 1em; }
+  .apple_pagination a, .apple_pagination span {
+    padding: .2em .3em; }
+  .apple_pagination span.disabled {
+    color: #AAA; }
+  .apple_pagination span.current {
+    font-weight: bold; }
+  .apple_pagination a {
+    text-decoration: none;
+    color: black; }
+    .apple_pagination a:hover, .apple_pagination a:focus {
+      text-decoration: underline; }
+

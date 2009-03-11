@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.find(:all)
+    @posts = Post.paginate :page => params[:page], :per_page => 20
   end
   
   def show
